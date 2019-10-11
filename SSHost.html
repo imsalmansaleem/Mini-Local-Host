@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SSLocalHost</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function store()
+		{
+			var db = document.getElementById('dbnm').value;
+			var tb = document.getElementById('tbnm').value;
+			var col = document.getElementById('colnum').value;
+			localStorage.setItem("dbName",db);
+			localStorage.setItem("tbName",tb);
+			localStorage.setItem("colNumber",col);
+			window.location = "next.html";
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 offset-md-3 pb-5">
+				<h1>SSLocalHost</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 pb-3">
+				<div class="input-group input-group-lg pb-3">
+					<div class="input-group-prepend">
+                       <span class="input-group-text" id="inputGroup-sizing-lg">DataBase Name</span>
+                    </div>
+  					<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="dbnm">
+				</div>
+				<div class="input-group input-group-lg pb-3">
+					<div class="input-group-prepend">
+                       <span class="input-group-text" id="inputGroup-sizing-lg">Table Name</span>
+                    </div>
+  					<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="tbnm">
+				</div>
+				<div class="input-group input-group-lg pb-3">
+					<div class="input-group-prepend">
+                       <span class="input-group-text" id="inputGroup-sizing-lg">Number of Columns</span>
+                    </div>
+  					<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="colnum">
+				</div>
+				<button type="button" class="btn btn-primary mb-2" onclick="store();">Next</button>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

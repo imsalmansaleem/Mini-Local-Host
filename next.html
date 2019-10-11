@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SSLocalHost</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function retrieve()
+		{
+		var db = localStorage.getItem("dbName");
+		var tb = localStorage.getItem("tbName");
+		var col = localStorage.getItem("colNumber");
+		var a = document.getElementById('tableBody');
+		document.getElementById('dbnm').value = db;
+		document.getElementById('tbnm').value = tb;
+		document.getElementById('colnum').value = col; 
+		for(var i=1;i<=col;i++)
+		{
+		a.innerHTML+='<tr><th scope="row">'+i+'</th><td><input type="text" name="atnm[]"></td><td><select class="custom-select" name="dType[]"><option selected="">Data Type</option><option value="integer">int</option><option value="varchar(255)">varchar</option><option value="text">text</option></select></td><td><input type="hidden" name="PK[]" value="0"><input type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"</td><td><input type="hidden" name="AI[]" value="0"><input type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"</td></tr>';
+		}
+		}
+	</script>
+</head>
+
+<body onload="retrieve();">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 offset-md-3 pb-5">
+				<h1>SSLocalHost</h1>
+			</div>
+		</div>
+	</div>
+
+    <form action="table.php" method="POST">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 pb-3">
+				<div class="input-group input-group-lg pb-3">
+					<div class="input-group-prepend">
+                       <span class="input-group-text" id="inputGroup-sizing-lg">DataBase Name</span>
+                    </div>
+  					<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="dbnm" name="dbnm">
+				</div>
+				<div class="input-group input-group-lg pb-3">
+					<div class="input-group-prepend">
+                       <span class="input-group-text" id="inputGroup-sizing-lg">Table Name</span>
+                    </div>
+  					<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="tbnm" name="tbnm">
+				</div>
+				<div class="input-group input-group-lg pb-3">
+					<div class="input-group-prepend">
+                       <span class="input-group-text" id="inputGroup-sizing-lg">Number of Columns</span>
+                    </div>
+  					<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="colnum" name="colnum">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<table class="table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Attribute Name</th>
+                      <th>Data Type</th>
+                      <th>Primary Key</th>
+                      <th>Auto Increment</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody">
+                    
+                 </tbody>
+                </table>
+                <button type="submit" class="btn btn-primary mb-2">Go</button>
+			</div>
+		</div>
+	</div>
+	</form>
+
+</body>
+</html>
