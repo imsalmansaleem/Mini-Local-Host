@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SSLocalHost</title>
+<!---Name of title localhost is enough--->
+	<title>LocalHost</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
@@ -22,7 +23,7 @@
 	</script>
 </head>
 
-<body onload="retrieve();">
+<body onload="retrieve()">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6 offset-md-3 pb-5">
@@ -30,7 +31,7 @@
 			</div>
 		</div>
 	</div>
-
+<!---The submitted data will go to file named table.php and further on data will go database--->
     <form action="table.php" method="POST">
 	<div class="container-fluid">
 		<div class="row">
@@ -56,6 +57,7 @@
 			</div>
 		</div>
 		<div class="row">
+			<!-- This table will cover half of page size across row when the screen size is medium-->
 			<div class="col-md-6">
 				<table class="table">
                   <thead>
